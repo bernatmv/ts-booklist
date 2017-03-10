@@ -1,0 +1,42 @@
+{
+  "name": "ts-booklist",
+  "version": "0.1.0",
+  "description": "Popular booklist with TS + Jest",
+  "author": "Bernat Martínez <bernatmv@gmail.com>",
+  "main": "dist/index.js",
+  "typings": "ts-booklist.d.ts",
+  "devDependencies": {
+    "@types/jest": "~18.1.1",
+    "@types/node": "~7.0.5",
+    "jest": "~19.0.2",
+    "rimraf": "~2.6.1",
+    "tslint": "~4.5.1",
+    "npm-scripts-info": "^0.3.6",
+    "opn-cli": "^3.1.0",
+    "typedoc": "^0.5.7",
+    "typescript": "~2.2.1"
+  },
+  "scripts": {
+    "info": "npm-scripts-info",
+    "clean": "rimraf dist tmp",
+    "build": "rimraf dist && yarn build-main",
+    "build-main": "tsc -p tsconfig.json",
+    "watch": "tsc -w -p tsconfig.json",
+    "lint": "tslint -t stylish '{src,__tests__}/**/*.{ts,tsx}'",
+    "test": "yarn lint && yarn test-coverage",
+    "test-coverage": "jest --coverage",
+    "test-watch": "jest --watch",
+    "docs": "yarn docs-html && opn dist/docs/index.html",
+    "docs-html": "typedoc src/index.ts --excludePrivate --mode file --theme minimal --out dist/docs"
+  },
+  "scripts-info": {
+    "info": "Information about the available scripts",
+    "clean": "Rimraf the dist and tmp folders",
+    "build": "Rimraf the dist folder and re-build",
+    "watch": "Watch source files, re-build library on changes",
+    "lint": "Result from linting all files with tslint",
+    "test": "Lint, build, and test the library",
+    "test-coverage": "Run tests, generate coverage report",
+    "docs": "Generate HTML API documentation and open it in a browser"
+  }
+}
