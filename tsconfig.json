@@ -3,24 +3,20 @@
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
+    "sourceMap": false,
+    "declaration": false,
     "noImplicitAny": false,
-    "preserveConstEnums": true,
-    "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "jsx": "preserve",
-    "allowJs": true,
     "rootDir": ".",
     "outDir": "dist",
+    "allowSyntheticDefaultImports": true,
+    "removeComments": true,
+    "jsx": "react",
+    "allowJs": true,
+    "importHelpers": true,
     "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noEmit": true
+    "noUnusedParameters": true
   },
   "include": [
-    "__tests__/**/*"
-  ],
-  "files": [
-    "typings/index.d.ts",
-    "./src/index.ts"
-  ]  
+    "src/**/*"
+  ]
 }
